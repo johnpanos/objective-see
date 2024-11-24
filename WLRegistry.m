@@ -22,6 +22,9 @@ registry_handle_global_remove(void *data, struct wl_registry *registry,
 		uint32_t name)
 {
 	// This space deliberately left blank
+	WLRegistry *wlRegistry = (__bridge WLRegistry*) data;
+	OFNumber *objId = [OFNumber numberWithUnsignedInt:name];
+	[wlRegistry removeObjId: objId];
 }
 
 static const struct wl_registry_listener
@@ -56,5 +59,10 @@ registry_listener = {
         void *interface = wl_registry_bind(_registry, objId, interfaceStruct, version);
         [[obj initWithObjId:objId] initWithObj:interface];
     }
+}
+
+- (void) removeObjId:(OFNumber *)objId {
+    WLObject *obj = [WLObject objectForId:objId];
+    [obj dealloc];
 }
 @end

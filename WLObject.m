@@ -29,4 +29,8 @@ static const OFMutableDictionary* wlObjectDict = nil;
 + (OFArray*) allObjects {
     return [wlObjectDict allObjects];
 }
+
++ (WLObject*) objectForId: (OFNumber*) objId {
+    return [wlObjectDict objectForKey:objId];
+}
 @end

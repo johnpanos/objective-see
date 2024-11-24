@@ -11,4 +11,5 @@
 - (void*) nativeInterface;
 
 + (OFArray*) allObjects;
++ (WLObject*) objectForId: (OFNumber*) objId;
 @end

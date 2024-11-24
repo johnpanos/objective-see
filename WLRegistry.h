@@ -13,5 +13,5 @@
         withObjId: (uint32_t) objId
         withVersion: (uint32_t) version;
 
-// - (id) instanceForKey: (OFString*) key;
+- (void) removeObjId: (OFNumber *)objId;
 @end
