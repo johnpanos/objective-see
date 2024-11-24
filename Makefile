@@ -1,7 +1,7 @@
 TARGET = main
 LIBS = -lwayland-client
 CC = clang
-CFLAGS = $(shell objfw-config --all) -v
+CFLAGS = $(shell objfw-config --all) -v -g
 
 .PHONY: default all clean
 

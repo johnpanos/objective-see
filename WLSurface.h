@@ -1,4 +1,5 @@
 #include <ObjFW/ObjFW.h>
+#include "WLObject.h"
 
 @class WLBuffer;
 
@@ -9,9 +10,11 @@
 - (void) preferredBufferTransform: (int)transform;
 @end
 
-@interface WLSurface : OFObject
+@interface WLSurface : WLObject {
+    struct wl_surface *_surface;
+}
 
-@property (weak) id<WLSurfaceDelegate> delegate;
+@property (assign) id<WLSurfaceDelegate> delegate;
 
 - (void) attach: (WLBuffer*)buffer position:(OFPoint) position;
 - (void) commit;
