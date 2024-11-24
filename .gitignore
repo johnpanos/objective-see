@@ -1,2 +1,4 @@
 *.o
 main
+.kdev4
+*.kdev4

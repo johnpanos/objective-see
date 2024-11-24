@@ -1,3 +1,5 @@
+#pragma once
+
 #include <ObjFW/ObjFW.h>
 #include "WLObject.h"
 

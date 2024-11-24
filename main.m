@@ -2,6 +2,7 @@
 #include "WLDisplay.h"
 #include "WLObject.h"
 #include "WLSurface.h"
+#include "WLCompositor.h"
 
 int main() {
     WLDisplay *display = [[WLDisplay alloc] init];
@@ -9,11 +10,10 @@ int main() {
 
     for (WLObject *obj in [WLObject allObjects]) {
         [OFStdOut writeLine: [OFString stringWithFormat: @"Found object %@", [obj className]]];
-
-        WLSurface *surface = [obj createSurface];
-         [OFStdOut writeLine: [OFString stringWithFormat: @"Found object %@", [surface className]]];
     }
 
+    WLSurface *surface = [[WLCompositor sharedInstance] createSurface];
+    [OFStdOut writeLine: [OFString stringWithFormat: @"Surface obj %@", [surface className]]];
 
     return 0;
 }

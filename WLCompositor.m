@@ -4,9 +4,18 @@
 #include "WLCompositor.h"
 #include "WLSurface.h"
 
+
 @implementation WLCompositor
+
+static WLCompositor *globalInstance;
+
++ (instancetype)sharedInstance {
+    return globalInstance;
+}
+
 - (instancetype)initWithObj:(void *)obj {
-    _compositor = obj;
+    _compositor = (struct wl_compositor*)obj;
+    globalInstance = self;
     return self;
 }
 

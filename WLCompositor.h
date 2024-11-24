@@ -7,6 +7,8 @@
     struct wl_compositor *_compositor;
 }
 
++ (instancetype) sharedInstance;
+
 - (void*) nativeInterface;
 
 - (WLSurface*) createSurface;

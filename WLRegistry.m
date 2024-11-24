@@ -24,6 +24,7 @@ registry_handle_global_remove(void *data, struct wl_registry *registry,
 	// This space deliberately left blank
 	WLRegistry *wlRegistry = (__bridge WLRegistry*) data;
 	OFNumber *objId = [OFNumber numberWithUnsignedInt:name];
+
 	[wlRegistry removeObjId: objId];
 }
 
@@ -51,8 +52,6 @@ registry_listener = {
     Class klass = kInterfaceToClassDict[key];
 
     if (klass) {
-        [OFStdOut writeLine: [OFString stringWithFormat: @"Found interface %@", key]];
-        [OFStdOut writeLine: [OFString stringWithFormat: @"Found class %@", [klass className]]];
         WLObject *obj = [klass alloc];
 
         void* interfaceStruct = [obj nativeInterface];

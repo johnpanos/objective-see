@@ -3,6 +3,7 @@
 #include "WLSurface.h"
 
 @implementation WLSurface
+@synthesize delegate;
 
 - (void) attach:(WLBuffer *)buffer position:(OFPoint)position {
 }
