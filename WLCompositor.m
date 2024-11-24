@@ -9,8 +9,9 @@
     return self;
 }
 
-- (void*) createSurface {
-    wl_compositor_create_surface(_compositor);
+- (WLSurface*) createSurface {
+//     wl_compositor_create_surface(_compositor);
+    return nil;
 }
 
 - (void*) nativeInterface {
